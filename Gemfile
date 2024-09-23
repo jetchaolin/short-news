@@ -38,6 +38,8 @@ gem "faker", "~> 3.2"
 
 gem "rack-cors"
 
+# gem "tailwindcss-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -52,6 +54,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # Hot reload https://github.com/railsjazz/rails_live_reload
+  gem "rails_live_reload"
 end
 
 group :test do
@@ -59,3 +63,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "cssbundling-rails", "~> 1.4"

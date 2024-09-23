@@ -15,12 +15,7 @@ end
 =end
 
 Rails.application.routes.draw do
-  root to: redirect("/api/v1/articles")
-  namespace :api do
-    namespace :v1 do
-      # get "/articles", to: "articles#index"
-      # get "/articles"
-      resources :articles
-    end
-  end
+  root to: redirect("/articles")
+  get "/articles", to: "articles#index"
+  # get "/articles"
 end
