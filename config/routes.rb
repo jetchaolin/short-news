@@ -15,7 +15,12 @@ end
 =end
 
 Rails.application.routes.draw do
-  root to: redirect("/articles")
-  get "/articles", to: "articles#index"
+  root to: "articles#index"
+  # get "/articles", to: "articles#index"
   # get "/articles"
+  resources :articles do
+    collection do
+      post :index
+    end
+  end
 end
