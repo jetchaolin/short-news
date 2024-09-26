@@ -1,0 +1,4 @@
+<%= turbo_frame_tag "articles-page-#{@pagy.page}" do %>
+  <%= render partial: "article", collection: @articles %>
+  <%= render partial: "next_page" %>
+<% end %>

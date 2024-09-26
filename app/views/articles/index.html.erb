@@ -1,10 +1,11 @@
-<div>
-  <div>
-    <h1 class="text-5xl font-bold text-sky-400">
-      SOCORRO
-    </h1>
-</div>
-  <div>
-    <p>test</p>
+<div >
+  <div class="rounded-3xl bg-gradient-to-r from-sky-950 to-transparent">
+    <div class="flex pb-5 pt-5 justify-center ">
+      <h1 class="text-5xl font-bold text-sky-400">
+        Articles
+      </h1>
+    </div>
   </div>
+  <%= render partial: "article", collection: @articles %>
+  <%= render partial: "next_page" %>
 </div>

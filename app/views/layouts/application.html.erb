@@ -17,9 +17,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-sky-950 h-screen flex itens-center justify-center">
-    <main class="container h-full mx-48 mt-28 px-5 flex justify-center bg-slate-600">
-      <%= yield %>
-    </main>
+  <body class="h-screen flex bg-slate-950 ">
+    <div>
+      <nav class="text-6xl font-bold py-5 px-5 bg-gradient-to-r from-sky-950 to-transparent text-sky-400">
+        <h1>
+          Short News
+        </h1>
+      </nav>
+      <main class="container h-full mx-48 mt-28 flex justify-center itens-center">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
