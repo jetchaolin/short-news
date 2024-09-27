@@ -1,0 +1,39 @@
+<div class="w-full h-full">
+    <%= form_for @article, html: {data: {turbo: false}, class: "h-full"} do |f| %>
+        <ul class=" text-sky-400 font-bold text-3xl">
+            <li class=""><%= f.label :title, 'Title' %></li>
+            <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5">
+              <%= 
+                f.text_field :title, class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+                focus:ring-blue-500 focus:border-blue-500 w-2/3 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+                dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" 
+              %>
+            </li>
+            <li><%= f.label :author, 'Author' %></li>
+            <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5">
+              <%= 
+              f.text_field :author, class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+                focus:ring-blue-500 focus:border-blue-500 w-2/5 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+                dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" 
+              %>
+              </li>
+            <li><%= f.label :published_at, 'Published At' %></li>
+            <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5">
+              <%= 
+                f.date_field :published_at, class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+                focus:ring-blue-500 focus:border-blue-500 w-1/7 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+                dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" 
+              %>
+            </li>
+            <li><%= f.label :body, 'Body' %></li>
+            <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5">
+              <%= 
+              f.text_area :body, class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+                focus:ring-blue-500 focus:border-blue-500 w-2/3 min-h-72 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+                dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" 
+              %>
+              </li>
+            <li><%= f.submit 'Post', class: "" %></li>
+        </ul>
+    <% end %>
+</div>
