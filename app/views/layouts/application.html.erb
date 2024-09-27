@@ -18,13 +18,14 @@
   </head>
 
   <body class="h-screen flex bg-slate-950 ">
-    <div>
-      <nav class="text-6xl font-bold py-5 px-5 bg-gradient-to-r from-sky-950 to-transparent text-sky-400">
+    <div class="w-full">
+      <nav class="flex items-center justify-between text-6xl font-bold py-5 px-5 bg-gradient-to-r from-sky-950 to-transparent text-sky-400">
         <h1>
-          Short News
+          <%= link_to "Short News", articles_path %>
         </h1>
+        <h5 class="text-3xl text-sky-900"><%= link_to "Write Article", new_article_path %></h5>
       </nav>
-      <main class="container h-full mx-48 mt-28 flex justify-center itens-center">
+      <main class="container h-full w-full mx-48 mt-28 flex justify-center">
         <%= yield %>
       </main>
     </div>

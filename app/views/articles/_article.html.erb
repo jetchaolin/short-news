@@ -2,7 +2,7 @@
   <div class="border-b-2 border-dotted border-y-gray-50 border-opacity-30 p-5" <%= id="article-#{article.id}" %>>
     <div class="pt-5 ">
       <h1 class="text-4xl font-bold text-sky-400">
-        <%= article.title %>
+        <%= link_to "#{article.title}", article_path(article) %>
       </h1>
     </div>
     <p class="text-gray-600">          
