@@ -29,11 +29,19 @@ def random_date(start_date, end_date)
   Time.at(rand(start_date.to_i..end_date.to_i))
 end
 
+[ "Everything", "Politics", "Sports", "Entertainment", "Business", "Science", "Others" ].each do |name|
+  Category.find_or_create_by(name: name)
+end
+
+
+existing_categories = Category.all
+
 30.times do
   Article.create(
     title: Faker::Lorem.sentence(word_count: rand(3..10)),
     body: format_news_body(Faker::Lorem.paragraph(sentence_count: rand(70..500))),
     author: Faker::Name.name,
-    published_at: random_date(start_date, end_date)
+    published_at: random_date(start_date, end_date),
+    category: existing_categories.sample
   )
 end

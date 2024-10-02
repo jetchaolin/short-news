@@ -2,9 +2,21 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show update destroy ]
   # before_action :load_articles, only: %i[ index ]
   def index
+    # @pagy, @articles = pagy_countless(Article.order(published_at: :desc), limit: 3)
+
+    # render "scrollable_list" if params[:page]
+    if params[:category_id]
+      @category = Category.includes(:articles).find(params[:category_id])
+      @articles = @category.articles.order(published_at: :desc)
+
+      @pagy, @articles = pagy_countless(@articles, limit: 3)
+
+      render "scrollable_list" if params[:page]
+    else
     @pagy, @articles = pagy_countless(Article.order(published_at: :desc), limit: 3)
 
     render "scrollable_list" if params[:page]
+    end
   end
 
   def show
@@ -16,7 +28,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params.require(:article).permit(:title, :author, :published_at, :body))
+    @article = Article.new(params.require(:article).permit(:title, :author, :published_at, :category_id, :body))
     @article.save!
     redirect_to root_path
   end
@@ -26,6 +38,13 @@ class ArticlesController < ApplicationController
 
   def destroy
   end
+
+  def user
+  end
+
+  def admin
+  end
+
 
   private
 
