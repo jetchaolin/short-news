@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# File name: articles.yml
 
 one:
   title: MyString
   author: MyString
+  published_at: 2022-01-01
+  category_id: 1
   body: MyString
 
 two:
   title: MyString
   author: MyString
+  published_at: 2022-01-01
+  category_id: 1
   body: MyString
