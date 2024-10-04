@@ -18,7 +18,7 @@ end
 Rails.application.routes.draw do
   root to: "articles#index"
   # get "/articles", to: "articles#index"
-  # get "/articles"
+  # get "search/articles" to: "article#index"
   resources :categories, only: [] do
     resources :articles, only: [ :index ]
   end

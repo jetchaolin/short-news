@@ -5,17 +5,22 @@ class ArticlesController < ApplicationController
     # @pagy, @articles = pagy_countless(Article.order(published_at: :desc), limit: 3)
 
     # render "scrollable_list" if params[:page]
-    if params[:category_id]
-      @category = Category.includes(:articles).find(params[:category_id])
-      @articles = @category.articles.order(published_at: :desc)
-
-      @pagy, @articles = pagy_countless(@articles, limit: 3)
+    if params[:search]
+      @search = Article.search(params[:search])
+      @pagy, @articles = pagy_countless(@search.order(published_at: :desc), limit: 3)
 
       render "scrollable_list" if params[:page]
-    else
-    @pagy, @articles = pagy_countless(Article.order(published_at: :desc), limit: 3)
+    elsif params[:category_id]
+        @category = Category.includes(:articles).find(params[:category_id])
+        @articles = @category.articles.order(published_at: :desc)
 
-    render "scrollable_list" if params[:page]
+        @pagy, @articles = pagy_countless(@articles, limit: 3)
+
+        render "scrollable_list" if params[:page]
+    else
+      @pagy, @articles = pagy_countless(Article.order(published_at: :desc), limit: 3)
+
+      render "scrollable_list" if params[:page]
     end
   end
 
