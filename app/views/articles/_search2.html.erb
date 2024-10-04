@@ -1,0 +1,6 @@
+<% form_tag search_articles_path, method: "get" do %>
+  <p class="h-10 w-96 rounded-3xl bg-slate-800 px-5 text-sky-400 focus:outline-sky-400">
+    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+    <%= submit_tag "Search", class: "hidden" %>
+  </p>
+<% end %>
