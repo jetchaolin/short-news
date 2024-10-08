@@ -66,6 +66,6 @@ end
 
 gem "cssbundling-rails", "~> 1.4"
 
-gem "pagy", "~> 9.0"
+gem "pagy", "~> 9.1"
 
 gem "devise", "~> 4.9"
