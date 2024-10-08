@@ -30,8 +30,14 @@
             <button type="submit" class="">Search</button>
           </form>
         </div>
-        <h5 class="text-3xl text-sky-900"><%= link_to "Write Article", new_article_path %></h5>
+        <ul class="navbar-nav text-xl">
+          <%= render 'admins/sessions/manager' %>
+        </ul>
       </nav>
+      <div>
+          <p class="notice text-3xl text-sky-400"><%= notice %></p>
+          <p class="alert text-3xl text-sky-400"><%= alert %></p>
+      </div>
       <main class="container h-full w-full mx-48 mt-10 flex justify-center">
         <%= yield %>
       </main>
