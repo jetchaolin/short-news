@@ -17,11 +17,12 @@ end
 
 Rails.application.routes.draw do
   root to: "articles#index"
+  devise_for :admins
   # get "/articles", to: "articles#index"
   # get "search/articles" to: "article#index"
   resources :categories, only: [] do
     resources :articles, only: [ :index ]
   end
 
-  resources :articles, only: [ :index, :create, :new, :edit, :show ]
+  resources :articles, only: [ :index, :create, :new, :edit, :show, :destroy, :update ]
 end

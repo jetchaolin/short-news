@@ -1,0 +1,44 @@
+<div class="min-w-full text-center">
+  <h2 class="mb-5 text-5xl font-bold text-sky-400">Sign up</h2>
+
+  <div class="flex justify-center w-full">
+    <ul class="w-1/2 text-sky-400 font-bold text-3xl ">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  
+      <li class=""><%= render "admins/shared/error_messages", resource: resource %></li>
+
+      <li class=""><%= f.label :email %></li>
+      <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+              focus:ring-blue-500 focus:border-blue-500 w-96 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+              dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" %>
+      </li>
+
+      <li class="text-xl">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %></li>
+      <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+        <%= f.password_field :password, autocomplete: "new-password", class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+              focus:ring-blue-500 focus:border-blue-500 w-96 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+              dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" %>
+      </li>
+
+      <li class="text-xl"><%= f.label :password_confirmation %></li>
+      <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+              focus:ring-blue-500 focus:border-blue-500 w-96 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+              dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" %>
+      </li>
+
+      <div class="actions text-sky-400">
+        <%= f.submit "Sign up", class: "mb-4 h-16 text-4xl font-bold" %>
+      </div>
+    <% end %>
+
+    <div class="block px-32 text-1xl text-sky-800">
+          <%= render "admins/shared/links" %>
+    </div>
+  </div>
+</div>
