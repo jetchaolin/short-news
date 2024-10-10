@@ -4,25 +4,20 @@
         <li class=""><%= f.label :title, 'Title' %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= 
-            f.text_field :title, required: true, class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
-            focus:ring-blue-500 focus:border-blue-500 w-2/3 p-2.5 dark:bg-sky-950 dark:border-sky-800 
-            dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" 
+            f.text_field :title, required: true, class: "input w-2/3" 
           %>
         </li>        
         <li><%= f.label :category %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= 
             select_tag 'article[category_id]', options_for_select(Category.all.pluck(:name, :id)), { required: true, class: 
-            "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-1/7 p-2.5 
-            dark:bg-sky-950 dark:border-sky-800 dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" } 
+            "input w-1/7" } 
           %>
         </li>
         <li><%= f.label :body, 'Body' %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= 
-            f.text_area :body, required: true, class: "bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
-            focus:ring-blue-500 focus:border-blue-500 w-2/3 min-h-72 p-2.5 dark:bg-sky-950 dark:border-sky-800 
-            dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950" 
+            f.text_area :body, required: true, class: "input w-2/3 min-h-72" 
           %>
         </li>
       <li><%= f.submit 'Edit', class: "" %></li>
