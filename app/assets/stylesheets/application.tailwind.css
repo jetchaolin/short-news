@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .input {
+    @apply bg-sky-400 border border-sky-400 text-gray-900 text-sm rounded-lg 
+    focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-sky-950 dark:border-sky-800 
+    dark:placeholder-sky-800 dark:text-white dark:focus:ring-sky-950 dark:focus:border-sky-950;
+  }
+
+  .form-li {
+    @apply w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2;
+  }
+}

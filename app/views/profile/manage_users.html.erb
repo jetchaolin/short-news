@@ -1,0 +1,18 @@
+<div class="flex justify-center min-w-full text-center">
+  <table class="max-h-20 table-auto border-solid border-2 border-sky-400">
+    <tr class="border-solid border-2 border-sky-900">
+      <th class="text-slate-950 font-bold text-3xl bg-sky-950">ID</th>
+      <th class="text-slate-950 font-bold text-3xl bg-sky-950">Email</th>
+      <th class="text-slate-950 font-bold text-3xl bg-sky-950">Author</th>
+      <th class="text-slate-950 font-bold text-3xl bg-sky-950">Created at</th>
+    </tr>
+      <% User.all.each do |user| %>
+        <tr class="w-1/2 font-bold text-3xl">
+          <td class="px-2 border-solid border-2 border-sky-900 bg-slate-950 text-sky-400"><%= user.id %></td>
+          <td class="px-2 border-solid border-2 border-sky-900 bg-slate-950 text-sky-500"><%= user.email %></td>
+          <td class="px-2 border-solid border-2 border-sky-900 bg-slate-950 text-sky-800"><%= user.author ? "Yes" : "No" %></td>
+          <td class="px-2 border-solid border-2 border-sky-900 bg-slate-950 text-sky-800"><%= user.created_at %></td>
+        </tr>
+      <% end %>
+  </table>
+</div>
