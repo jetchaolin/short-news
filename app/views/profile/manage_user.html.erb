@@ -1,0 +1,30 @@
+<div class="flex justify-center min-w-full text-center">
+  <ul class="w-1/2 text-sky-400 font-bold text-3xl ">
+    <%= form_with(model: @user, url: profile_path, method: :patch, local: true, html: { class: "manage_user_details", id: "user_details" }, class: "h-full") do |f| %>
+
+      <li class=""><%= f.label :name, 'Name' %></li>
+      <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+          <%= 
+            f.text_field :username, value: @user.username, class: "input w-2/3" 
+          %>
+      </li>
+
+      <li class=""><%= f.label :author, 'Author' %></li>
+      <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+          <%= 
+            f.check_box :author, class: "input w-2/3" 
+          %>
+      </li>
+
+      <li><%= f.label :email %></li>
+      <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+          <%= 
+            f.email_field :email, value: @user.email, class: "input w-2/3" 
+          %>
+      </li>
+
+      <li><%= f.submit 'Edit', class: "" %></li>
+
+    <% end %>
+  </ul>
+</div>
