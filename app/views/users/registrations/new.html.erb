@@ -7,6 +7,11 @@
   
       <li class=""><%= render "admins/shared/error_messages", resource: resource %></li>
 
+      <li class=""><%= f.label :username, 'Name' %></li>
+      <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
+        <%= f.text_field :username, autofocus: true, autocomplete: "name", class: "input w-96" %>
+      </li>
+
       <li class=""><%= f.label :email %></li>
       <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input w-96" %>

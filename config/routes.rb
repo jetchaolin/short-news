@@ -15,8 +15,9 @@ end
 
 Rails.application.routes.draw do
   root to: "articles#index"
-  get "profile", to: "profile#new"
-  get "profile/manage", to: "profile#manage_users"
+  get "profile/manage", to: "profile#manage"
+  get "profile/manage/user/:id", to: "profile#manage_user", as: "profile_manage_user"
+  get "profile/new_user", to: "profile#new_user"
   devise_for :admins
   devise_for :users
   # get "/articles", to: "articles#index"
@@ -26,4 +27,9 @@ Rails.application.routes.draw do
   end
 
   resources :articles, only: [ :index, :create, :new, :edit, :show, :destroy, :update ]
+  resources :profile, only: [ :index, :new, :create, :edit, :update, :destroy ] do
+    member do
+      post "change_user_author"
+    end
+  end
 end
