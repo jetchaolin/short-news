@@ -1,26 +1,41 @@
 <div class="px-5 bg-slate-950">  
-  <div class="border-b-2 border-dotted border-y-gray-50 border-opacity-30 p-5" <%= id="article-#{article.id}" %>>
-    <div class="pt-5 ">
-      <h1 class="text-4xl font-bold text-sky-400">
-        <%= link_to "#{article.title}", article_path(article) %>
-      </h1>
-    </div>
-    <p class="text-gray-600">          
-      <% if article.author %>
-        <%= "By " + article.author %>
+  <div class="border-b-2 border-dotted border-y-gray-50 border-opacity-30 p-2 pb-5" <%= id="article-#{article.id}" %>>
+    <div class="pt-5 min-h-24">
+      <% if local_assigns[:full] %>
+        <h2 class="text-4xl font-bold text-sky-400">
+          <%= link_to "#{article.title}", article_path(article) %>
+        </h2>
       <% else %>
-        Published
+        <h2 class="text-2xl font-bold text-sky-400">
+          <%= link_to (truncate "#{article.title}", length: 40), article_path(article) %>
+        </h2>
       <% end %>
-      on
-      <% if article.published_at %>
-        <%= article.published_at %>
+    </div>
+    <p class="text-gray-600">
+      <% if local_assigns[:full] %>        
+        <% if article.author %>
+          <%= "By " + article.author %>
+        <% else %>
+          Published
+        <% end %>
+        on
+        <% if article.published_at %>
+          <%= article.published_at %>
+        <% end %>
+      <% else %>
       <% end %>
     </p>
     <div class="pt-5">
-      <span class="text-gray-400">
-        <%= article.body %>
-      </span>
-      <p class="text-gray-400"><%= "Article: " + article.id.to_s %></p>
+      <% if local_assigns[:full] %>
+        <span class="text-gray-400">
+          <%= simple_format article.body %>
+        </span>
+      <% else %>
+        <span class="text-gray-400">
+          <%= truncate article.body, length: 40 %>
+        </span>
+        <p class="text-gray-400"><%= "Article: " + article.id.to_s %></p>
+      <% end %>
     </div>
     <% if current_admin || article.author == current_user&.username %>
       <div class="pt-5">
