@@ -1,5 +1,7 @@
 <%= turbo_frame_tag "articles-page-#{@pagy.page}" do %>
-  <%= render partial: "article", collection: @articles %>
+  <div class="grid grid-cols-4 gap-4 auto-rows-max auto-cols-max">
+    <%= render partial: "article", collection: @articles %>
+  </div>
   <% if @pagy.page < @pagy.last %>
     <%= render partial: "next_page" %>
   <% end %>

@@ -18,7 +18,7 @@
 
 end_date = Time.now
 # Define o intervalo de um mês atrás
-start_date = end_date - (30 * 24 * 60 * 60)
+start_date = end_date - 1.month.ago
 
 def format_news_body(paragraph)
   formatted_body = paragraph.split("\n\n").map { |para| para.strip }.join("\n\n")
@@ -29,14 +29,14 @@ def random_date(start_date, end_date)
   Time.at(rand(start_date.to_i..end_date.to_i))
 end
 
-[ "Everything", "Politics", "Sports", "Entertainment", "Business", "Science", "Others" ].each do |name|
+[ "Everything", "Politics", "Sports", "Entertainment", "Business", "Science", "Health", "Technology", "Travel", "Food", "Music", "Others" ].each do |name|
   Category.find_or_create_by(name: name)
 end
 
 
 existing_categories = Category.all
 
-30.times do
+50.times do
   Article.create(
     title: Faker::Lorem.sentence(word_count: rand(3..10)),
     body: format_news_body(Faker::Lorem.paragraph(sentence_count: rand(70..500))),
