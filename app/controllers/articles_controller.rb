@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
       @search = Article.search(params[:search])
       if @search.count > 16
         @pagy, @articles = pagy_countless(@search.order(published_at: :desc), limit: 16, last_page: @search.count)
+      else
+        @articles = @search
       end
 
       render "scrollable_list" if params[:page]

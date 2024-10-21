@@ -1,4 +1,4 @@
-<div >
+<div class="min-w-[1553px]">
   <nav class="py-5 px-5">
     <ul class="flex items-center justify-between text-2xl text-sky-600">
       <% Category.all.order(name: :asc).each do |category| %>
@@ -15,7 +15,7 @@
       </h1>
     </div>
   </div>
-  <div class="grid grid-cols-4 gap-4 auto-rows-min auto-cols-min justify-stretch">
+  <div class="min-w-96 grid grid-cols-4 gap-4 auto-rows-min auto-cols-min justify-stretch">
     <%= render partial: "article", collection: @articles %>
   </div>
   <%= render partial: "next_page" %>
