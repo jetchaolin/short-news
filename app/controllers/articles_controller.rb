@@ -3,12 +3,9 @@ class ArticlesController < ApplicationController
   # before_action :authenticate_admin!
   # before_action :load_articles, only: %i[ index ]
   def index
-    # @pagy, @articles = pagy_countless(Article.order(published_at: :desc), limit: 3)
-
-    # render "scrollable_list" if params[:page]
     if params[:search]
       @search = Article.search(params[:search])
-      if @search.count > 16
+      if @search.count > 16 # prevents pagy from trying to load pages when there are not enough articles
         @pagy, @articles = pagy_countless(@search.order(published_at: :desc), limit: 16, last_page: @search.count)
       else
         @articles = @search
@@ -19,7 +16,7 @@ class ArticlesController < ApplicationController
         @category = Category.includes(:articles).find(params[:category_id])
         @articles = @category.articles.order(published_at: :desc)
 
-        if @category.articles.count > 16
+        if @category.articles.count > 16 # prevents pagy from trying to load pages when there are not enough articles
           @pagy, @articles = pagy_countless(@articles, limit: 16, last_page: @category.articles.count)
         end
 
@@ -58,13 +55,6 @@ class ArticlesController < ApplicationController
     @article.destroy!
     redirect_to root_path
   end
-
-  def user
-  end
-
-  def admin
-  end
-
 
   private
 
