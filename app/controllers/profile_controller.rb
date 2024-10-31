@@ -1,6 +1,6 @@
 class ProfileController < ApplicationController
   before_action :check_username, only: %i[ index ]
-  before_action :set_user, only: %i[ manage_user change_user_author ]
+  before_action :set_user, only: %i[ manage_user change_user_author_toggle_button ]
 
   def index
     @user
@@ -34,7 +34,7 @@ class ProfileController < ApplicationController
     end
   end
 
-  def change_user_author
+  def change_user_author_toggle_button
     @user.update(author: (@user.author ? false : true))
     redirect_to profile_manage_path
   end
@@ -51,10 +51,10 @@ class ProfileController < ApplicationController
 
   def check_username
     return if current_admin
-    if current_user
+    if current_user # if the current user still has no username registered redirects him to register page
       redirect_to profile_new_user_path(current_user.id) if !current_user.username
     else
-      redirect_to new_user_registration_path
+      redirect_to new_user_registration_path # in case an user access the url without being logged in redirects to sign up page
     end
   end
 end

@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :articles, only: [ :index, :create, :new, :edit, :show, :destroy, :update ]
   resources :profile, only: [ :index, :new, :create, :edit, :update, :destroy ] do
     member do
-      post "change_user_author"
+      post "change_user_author", to: "profile#change_user_author_toggle_button"
     end
   end
 end
