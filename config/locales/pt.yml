@@ -1,0 +1,67 @@
+pt:
+  hello: "Olá mundo!"
+  common:
+    positive: "Sim"
+    negative: "Não"
+    name: "Nome"
+    email: "E-mail"
+    author: "Autor"
+    title: "Título"
+    published_at: "Publicado em"
+    category: "Categoria"
+    body: "Corpo"
+    post: "Postar"
+    created_at: "Criado em"
+    password: "Senha"
+    password_new: "Nova senha"
+    password_confirmation: "Confirmar senha"
+    password_forgot: "Esqueci minha senha"
+    edit: "Editar"
+    delete: "Deletar"
+    register: "Registrar"
+    login: "Entrar"
+    logout: "Sair"
+    remember_me: "Lembrar-me"
+    characters_minimum: "caracteres no mínimo"
+  categories:
+    business: "Negócios"
+    entertainment: "Entretenimento"
+    others: "Outras"
+    health: "Saúde"
+    science: "Ciência"
+    sports: "Esportes"
+    technology: "Tecnologia"
+    travel: "Viagem"
+    sports: "Esportes"
+    food: "Comida"
+    music: "Musica"
+    everything: "Tudo"
+    politics: "Política"
+  layouts:
+    application:
+      search: "Buscar"
+      search_placeholder: "Buscar..."
+    locales:
+      pt: "PT"
+      en: "EN"
+  profile:
+    index:
+      write_article: "Escrever artigo"
+      create_user: "Criar usuário"
+      manage_users: "Gerenciar usuários"
+      dashboard: "Painel"
+    manager:
+      profile: "Perfil"
+      logout: "Sair"
+      register: "Registrar"
+      login: "Entrar"
+  articles:
+    index:
+      header: "Artigos"
+    show:
+      publisher: "por"
+      published: "em"
+    new:
+      title: "Novo artigo"
+    edit:
+      title: "Editar artigo"
