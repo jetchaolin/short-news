@@ -1,14 +1,14 @@
 <div class="min-w-full text-center">
-  <h1 class="mb-5 text-5xl font-bold text-sky-400">Log in</h1>
+  <h1 class="mb-5 text-5xl font-bold text-sky-400"><%= I18n.t('common.login') %></h1>
 
   <div class="flex justify-center w-full">
     <ul class="w-1/2 text-sky-400 font-bold text-3xl ">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <li class=""><%= f.label :email %></li>
+        <li class=""><%= f.label :email, I18n.t('common.email') %></li>
         <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input w-96" %>
         </li>
-        <li class=""><%= f.label :password %></li>
+        <li class=""><%= f.label :password, I18n.t('common.password') %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= f.password_field :password, autocomplete: "current-password", class: "input w-96" %>
         </li>
@@ -16,12 +16,12 @@
         <% if devise_mapping.rememberable? %>
           <li class="text-sky-800 text-xl">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :remember_me, I18n.t('common.remember_me') %>
           </li>
         <% end %>
 
         <li class="text-sky-400">
-          <%= f.submit "Log in", class: "mt-4 mb-4 h-16 text-4xl font-bold" %>
+          <%= f.submit I18n.t('common.login'), class: "mt-4 mb-4 h-16 text-4xl font-bold" %>
         </li>
         <div class="block px-32 text-xl text-sky-800">
           <%= render "admins/shared/links" %>

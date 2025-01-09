@@ -1,26 +1,26 @@
 <div class="w-full h-full">
   <%= form_with(model: @article, local: true, class: "h-full") do |f| %>
     <ul class=" text-sky-400 font-bold text-3xl">
-        <li class=""><%= f.label :title, 'Title' %></li>
+        <li class=""><%= f.label :title, I18n.t('common.title') %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= 
             f.text_field :title, required: true, class: "input w-2/3" 
           %>
         </li>        
-        <li><%= f.label :category %></li>
+        <li><%= f.label :category, I18n.t('common.category') %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= 
             select_tag 'article[category_id]', options_for_select(Category.all.pluck(:name, :id)), { required: true, class: 
             "input w-1/7" } 
           %>
         </li>
-        <li><%= f.label :body, 'Body' %></li>
+        <li><%= f.label :body, I18n.t('common.body') %></li>
         <li class="w-full text-sky-950 text-2xl font-bold selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
           <%= 
             f.text_area :body, required: true, class: "input w-2/3 min-h-72" 
           %>
         </li>
-      <li><%= f.submit 'Edit', class: "" %></li>
+      <li><%= f.submit I18n.t('common.edit'), class: "" %></li>
     </ul>
   <% end %>
 </div>

@@ -40,10 +40,10 @@
     <% if current_admin || article.author == current_user&.username %>
       <div class="pt-5">
         <button id="edit-article" class="text-sky-400">
-          <%= link_to 'Edit', edit_article_path(article) %>  
+          <%= link_to I18n.t('common.edit'), edit_article_path(article) %>  
         </button>
         <button id="delete-article" class="text-sky-400">
-          <%= link_to 'Delete', article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+          <%= link_to I18n.t('common.delete'), article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
         </button>
       </div>
     <% end %>

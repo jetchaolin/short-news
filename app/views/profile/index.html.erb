@@ -3,17 +3,20 @@
     <h1 class="mb-12 text-5xl font-bold text-center text-sky-400">ADM</h1>
     <ul class="text-center">
       <li class="nav-item text-2xl text-sky-600">
-        <%= link_to "Write Article", new_article_path, class:"" %>
+        <%= link_to I18n.t('profile.index.write_article'), new_article_path, class:"" %>
       </li>
       <li class="nav-item text-2xl text-sky-600">
-        <%= link_to "Create User", new_user_registration_path, class:"" %>
+        <%= link_to I18n.t('profile.index.create_user'), new_user_registration_path, class:"" %>
       </li>
       <li class="nav-item text-2xl text-sky-600">
-        <%= link_to "Manage Users", profile_manage_path, class:"" %>
+        <%= link_to I18n.t('profile.index.manage_users'), profile_manage_path, class:"" %>
+      </li>
+      <li class="nav-item text-2xl text-sky-600">
+        <%= link_to I18n.t('common.password_forgot'), edit_admin_password_path(current_admin) %>
       </li>
       <li><hr class="h-px border-0 dark:bg-sky-900"></li>
       <li class="nav-item text-2xl text-sky-600">
-        <%= button_to "Logout", destroy_admin_session_path, method: :delete, class:"" %>
+        <%= button_to I18n.t('common.logout'), destroy_admin_session_path, method: :delete, class:"" %>
       </li>
     </ul>
   </div>
@@ -22,12 +25,12 @@
     <h1 class="mb-12 text-5xl font-bold text-center text-sky-400">Welcome, <%= current_user.username %></h1>
     <ul class="text-center">
       <li class="nav-item text-2xl text-sky-600">
-        <%= link_to "Write Article", new_article_path, class:"" %>
-        </li>
+        <%= link_to I18n.t('profile.index.write_article'), new_article_path, class:"" %>
+      </li>
       <li><hr class="h-px border-0 dark:bg-sky-900"></li>
       <li class="nav-item text-2xl text-sky-600">
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"" %>
-        </li>
+        <%= button_to I18n.t('common.logout'), destroy_user_session_path, method: :delete, class:"" %>
+      </li>
     </ul>
   </div>
 <% else %>
@@ -35,11 +38,11 @@
     <h1 class="mb-12 text-5xl font-bold text-center text-sky-400">Welcome, <%= current_user.username %></h1>
     <ul class="text-center">
       <li class="nav-item text-2xl text-sky-600">
-        <%= link_to "Dashboard", articles_path %>
+        <%= link_to I18n.t('profile.index.dashboard'), articles_path %>
       </li>
       <li><hr class="h-px border-0 dark:bg-sky-900"></li>
       <li class="nav-item text-2xl text-sky-600">
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"" %>
+        <%= button_to I18n.t('common.logout'), destroy_user_session_path, method: :delete, class:"" %>
       </li>
     </ul>
   </div>
