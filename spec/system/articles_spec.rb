@@ -82,7 +82,6 @@ describe "Author creates article" do
           click_button 'Edit'
         end
       end
-      debugger
       expect(current_path).to eq root_path
       expect(page).to have_content('Test title')
     end

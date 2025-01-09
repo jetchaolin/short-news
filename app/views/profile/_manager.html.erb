@@ -1,17 +1,19 @@
 <% if current_admin %>  
-  <li><%= link_to "Profile", profile_index_path %></li>
+  <li class="nav-item text-2xl text-sky-400">
+    <%= link_to I18n.t('profile.manager.profile'), profile_index_path %></li>
   <li><hr class="h-px border-0 dark:bg-sky-900"></li>
-  <li><%= button_to "Logout", destroy_admin_session_path, method: :delete %></li>
+  <li><%= button_to I18n.t('common.logout'), destroy_admin_session_path, method: :delete %></li>
 <% elsif current_user %>
-    <li><%= link_to "Profile", profile_index_path %></li>
+    <li class="nav-item text-2xl text-sky-400">
+      <%= link_to I18n.t('profile.manager.profile'), profile_index_path %></li>
     <li><hr class="h-px border-0 dark:bg-sky-900"></li>
-    <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class:"nav-item text-2xl text-sky-600" %></li>
+    <li><%= button_to I18n.t('common.logout'), destroy_user_session_path, method: :delete, class:"nav-item text-2xl text-sky-600" %></li>
 <% else %>
   <li class="nav-item text-2xl text-sky-600">
-    <%= link_to "Register", new_user_registration_path %>
+    <%= link_to I18n.t('profile.manager.register'), new_user_registration_path %>
   </li>
   <li><hr class="h-px border-0 dark:bg-sky-900"></li>
   <li class="nav-item text-2xl text-sky-600">
-    <%= link_to "Login", new_user_session_path %>
+    <%= link_to I18n.t('common.login'), new_user_session_path %>
   </li>
 <% end %>

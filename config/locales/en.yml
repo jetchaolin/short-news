@@ -28,4 +28,70 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  hello: "Hello world!"
+  common:
+    positive: "Yes"
+    negative: "No"
+    name: "Name"
+    email: "Email"
+    author: "Author"
+    title: "Title"
+    published_at: "Published at"
+    category: "Category"
+    body: "Body"
+    post: "Post"
+    created_at: "Created at"
+    password: "Password"
+    password_new: "Nova senha"
+    password_confirmation: "Password Confirmation"
+    password_forgot: "Forgot my password"
+    edit: "Edit"
+    delete: "Delete"
+    register: "Signup"
+    login: "Login"
+    logout: "Logout"
+    remember_me: "Remember me"
+    characters_minimum: "characters minimum"
+  categories:
+    business: "Business"
+    entertainment: "Entertainment"
+    others: "Others"
+    health: "Health"
+    science: "Science"
+    sports: "Sports"
+    technology: "Technology"
+    travel: "Travel"
+    sports: "Sports"
+    food: "Food"
+    music: "Music"
+    everything: "Everything"
+    politics: "Politics"
+  layouts:
+    application:
+      search: "Search"
+      search_placeholder: "Search..."
+    locales:
+      en: "EN"
+      pt: "PT"
+  profile:
+    index:
+      write_article: "Write Article"
+      create_user: "Create User"
+      manage_users: "Manage Users"
+      dashboard: "Dashboard"
+    manager:
+      profile: "Profile"
+      logout: "Logout"
+      register: "Register"
+      login: "Login"
+  articles:
+    index:
+      header: "Articles"
+    show:
+      publisher: "by"
+      published: "on"
+    new:
+      title: "New Article"
+    edit:
+      title: "Edit Article"
+

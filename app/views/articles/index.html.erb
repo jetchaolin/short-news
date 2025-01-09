@@ -3,7 +3,7 @@
     <ul class="flex items-center justify-between text-2xl text-sky-600">
       <% Category.all.order(name: :asc).each do |category| %>
         <li>
-          <%= link_to category.name, category_articles_path(category) %>
+          <%= link_to I18n.t("categories.#{category.name.downcase}"), category_articles_path(category) %>
         </li>
       <% end %>
     </ul>
@@ -11,7 +11,7 @@
   <div class="rounded-3xl bg-gradient-to-r from-sky-950 to-transparent">
     <div class="flex pb-5 pt-5 justify-center ">
       <h1 class="text-5xl font-bold text-sky-400">
-        <%= params[:search] ? "Results for: #{params[:search]}" : @category&.name || "Articles" %>
+        <%= params[:search] ? "Results for: #{params[:search]}" : @category&.name ? I18n.t("categories.#{@category.name.downcase}") : I18n.t('articles.index.header') %>
       </h1>
     </div>
   </div>
