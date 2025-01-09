@@ -2,7 +2,7 @@
   <ul class="w-1/2 text-sky-400 font-bold text-3xl ">
     <%= form_for current_user, url: profile_new_user_path, method: :patch, html: { class: "register_username", id: "register_user" }, class: "h-full" do |f| %>
 
-    <li class=""><%= f.label :username, 'Username' %></li>
+    <li class=""><%= f.label :username, I18n.t('common.name') %></li>
     <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
       <%= 
         f.text_field :username, required: true, class: "input w-2/3" 
@@ -10,7 +10,7 @@
     </li>
 
     <div class="actions text-sky-400">
-        <%= f.submit "Register", class: "mb-4 h-16 text-4xl font-bold" %>
+        <%= f.submit I18n.t('common.register'), class: "mb-4 h-16 text-4xl font-bold" %>
     </div>
     <% end %>
   </ul>

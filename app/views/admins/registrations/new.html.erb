@@ -1,5 +1,5 @@
 <div class="min-w-full text-center">
-  <h2 class="mb-5 text-5xl font-bold text-sky-400">Sign up</h2>
+  <h2 class="mb-5 text-5xl font-bold text-sky-400"><%= I18n.t('common.register') %></h2>
 
   <div class="flex justify-center w-full">
     <ul class="w-1/2 text-sky-400 font-bold text-3xl ">
@@ -7,27 +7,27 @@
   
       <li class=""><%= render "admins/shared/error_messages", resource: resource %></li>
 
-      <li class=""><%= f.label :email %></li>
+      <li class=""><%= f.label :email, I18n.t('common.email') %></li>
       <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input w-96" %>
       </li>
 
       <li class="text-xl">
-        <%= f.label :password %>
+        <%= f.label :password, I18n.t('common.password') %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> <%= I18n.t('common.characters_minimum') %>)</em>
         <% end %></li>
       <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
         <%= f.password_field :password, autocomplete: "new-password", class: "input w-96" %>
       </li>
 
-      <li class="text-xl"><%= f.label :password_confirmation %></li>
+      <li class="text-xl"><%= f.label :password_confirmation, I18n.t('common.password_confirmation') %></li>
       <li class="w-full text-sky-950 selection:bg-sky-950 selection:text-sky-400 pb-5 pt-2">
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input w-96" %>
       </li>
 
       <div class="actions text-sky-400">
-        <%= f.submit "Sign up", class: "mb-4 h-16 text-4xl font-bold" %>
+        <%= f.submit I18n.t('common.register'), class: "mb-4 h-16 text-4xl font-bold" %>
       </div>
     <% end %>
 
